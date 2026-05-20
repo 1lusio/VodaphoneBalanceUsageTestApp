@@ -33,6 +33,6 @@ public class AccountService {
                         item -> new UsageCounterDto(item.currentSpent(), item.total())
                 ));
 
-        return new AccountSummaryResponse(userBalance.getId(), userBalance.getBalance(), usage);
+        return new AccountSummaryResponse(String.valueOf(userBalance.getId()), userBalance.getBalance(), usage);
     }
 }

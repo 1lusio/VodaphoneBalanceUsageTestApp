@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.util.Map;
 
 public record AccountSummaryResponse(
-        Long id,
+        String id,
         BigDecimal balance,
         Map<String, UsageCounterDto> usage
 ) {}

@@ -33,7 +33,7 @@ class AccountControllerTest {
     @DisplayName("returns 200 with aggregated balance and usage")
     void getAccountSummary_returns200WithAggregatedBody() throws Exception {
         AccountSummaryResponse response = new AccountSummaryResponse(
-                1L,
+                "1",
                 new BigDecimal("250.75"),
                 Map.of(
                         "min", new UsageCounterDto(120, 500),
@@ -47,7 +47,7 @@ class AccountControllerTest {
                         .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$.id").value(1))
+                .andExpect(jsonPath("$.id").value("1"))
                 .andExpect(jsonPath("$.balance").value(250.75))
                 .andExpect(jsonPath("$.usage.min.currentSpent").value(120))
                 .andExpect(jsonPath("$.usage.min.total").value(500))

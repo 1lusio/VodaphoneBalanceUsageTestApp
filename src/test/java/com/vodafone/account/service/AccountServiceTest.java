@@ -46,7 +46,7 @@ class AccountServiceTest {
 
         AccountSummaryResponse response = accountService.getAccountSummary(1L);
 
-        assertThat(response.id()).isEqualTo(1L);
+        assertThat(response.id()).isEqualTo("1");
         assertThat(response.balance()).isEqualByComparingTo("250.75");
         assertThat(response.usage()).hasSize(3);
         assertThat(response.usage().get("min").currentSpent()).isEqualTo(120);
@@ -75,7 +75,7 @@ class AccountServiceTest {
 
         AccountSummaryResponse response = accountService.getAccountSummary(1L);
 
-        assertThat(response.id()).isEqualTo(1L);
+        assertThat(response.id()).isEqualTo("1");
         assertThat(response.usage()).isEmpty();
     }
 
